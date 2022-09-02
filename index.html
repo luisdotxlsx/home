@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en-US">
+    <title>Profile</title>
+    </head>
+    <style>/*Usamos este bloque para agregar un estilo, ojo, debemos de quitar el margin y padding*/
+            *{
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins',sans-serif;
+            }
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: rgb(0, 0, 27);
+            }
+            ul{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+            ul li{
+                position: relative;
+                list-style: none;
+            }
+            ul li a{
+                position: relative;
+                font-size: 4em;
+                text-decoration: none;
+                line-height: 1em;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: transparent;
+                -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+            }
+            ul li a::before{
+                content: attr(data-text);
+                position: absolute;
+                color: var(--clr);
+                width: 0;
+                overflow: hidden;
+                transition: 1s;
+                border-right: 8px solid var(--clr);
+                -webkit-text-stroke: 1px var(--clr);
+            }
+            ul li a:hover::before{
+                width: 100%;
+                filter: drop-shadow(0 0 25px var(--clr));
+            }
+    </style>
+    <body>
+    <ul>
+    <li style="--clr:#00ade1"><!--se agrega el --clr: y el codigo de color, buscalo asi en internet-->
+        <a href="#" data-text="&nbsp;Home">&nbsp;Home&nbsp;</a>
+    </li><!--el &nbsp lo usamos para agregar un espacio-->
+    <li style="--clr:#ff6493">
+        <a href="#" data-text="&nbsp;Biography">&nbsp;Biography&nbsp;</a></li>
+    <li style="--clr:#ffdd1c">
+        <a href="#" data-text="&nbsp;Social&nbsp;Media">&nbsp;Social&nbsp;Media&nbsp;</a></li>
+    </body>
+</html>
